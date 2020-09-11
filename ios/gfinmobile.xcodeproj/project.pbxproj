@@ -194,7 +194,6 @@
 				3DFEAD656489673EB79C1DAC /* Pods-gfinmobile-tvOSTests.debug.xcconfig */,
 				82251044B85E6C9F7BB34625 /* Pods-gfinmobile-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
