@@ -9,13 +9,22 @@ export default function Auth() {
     <SafeAreaView style={styles.safe}>
       <View style={styles.container}>
         <Button
+          labelStyle={styles.label}
+          uppercase={false}
+          style={styles.btn}
           mode="contained"
           color="#F88D1A"
           onPress={() => navigate('loginWithNumberPhone')}>
           Login with SDT
         </Button>
         <Text style={styles.or}>hoặc</Text>
-        <Button mode="contained" color="#3B5998" icon="facebook-box">
+        <Button
+          labelStyle={styles.label}
+          uppercase={false}
+          style={styles.btn}
+          mode="contained"
+          color="#3B5998"
+          icon="facebook-box">
           Login with Facebook
         </Button>
       </View>
@@ -31,5 +40,13 @@ const styles = StyleSheet.create({
   or: {
     textAlign: 'center',
     marginVertical: 10,
+  },
+  btn: {
+    padding: 7,
+  },
+  label: {
+    fontSize: 17,
+    lineHeight: 22,
+    color: '#FFFFFF',
   },
 });
