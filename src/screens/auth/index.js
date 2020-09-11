@@ -24,7 +24,7 @@ export default function Auth() {
           style={styles.btn}
           mode="contained"
           color="#3B5998"
-          icon="facebook-box">
+          icon="alpha-f-box">
           Login with Facebook
         </Button>
       </View>

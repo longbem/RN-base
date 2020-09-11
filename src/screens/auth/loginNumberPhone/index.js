@@ -1,19 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, SafeAreaView, StyleSheet, View } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 import { ic_auth } from './../image';
+import { useDispatch, connect } from 'react-redux';
+import { setToken } from './../../../store/users/actions';
 
-export default function LoginWithNumberPhone() {
+function LoginWithNumberPhone() {
+  const dispatch = useDispatch();
+  const [user, setUser] = useState({
+    numberPhone: '',
+    password: '',
+    token: false,
+  });
+
   const handleLogin = () => {
-    alert('login');
+    if (user.numberPhone === '123456' && user.password === '123456') {
+      alert('login');
+      dispatch(setToken(true));
+    } else {
+      alert('error');
+    }
   };
 
   return (
     <SafeAreaView style={styles.safe}>
       <View style={styles.container}>
         <Image source={ic_auth.ic_logo} style={styles.image} />
-        <TextInput mode="outlined" placeholder="Số điện thoại" />
-        <TextInput mode="outlined" placeholder="Mật khẩu" />
+        <TextInput
+          value={user.numberPhone}
+          onChangeText={(text) => setUser({ ...user, numberPhone: text })}
+          mode="outlined"
+          placeholder="Số điện thoại"
+        />
+        <TextInput
+          value={user.password}
+          onChangeText={(text) => setUser({ ...user, password: text })}
+          mode="outlined"
+          placeholder="Mật khẩu"
+          secureTextEntry={true}
+          right={<TextInput.Icon name="circle-slice-8" />}
+        />
         <Button
           uppercase={false}
           labelStyle={styles.labelPassword}
@@ -33,6 +59,12 @@ export default function LoginWithNumberPhone() {
     </SafeAreaView>
   );
 }
+
+const mapDispatch = {
+  setToken,
+};
+
+export default connect(null, mapDispatch)(LoginWithNumberPhone);
 
 const styles = StyleSheet.create({
   safe: {
