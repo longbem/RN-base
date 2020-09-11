@@ -3,12 +3,22 @@ import { NavigationContainer } from '@react-navigation/native';
 import MainStack from './MainStack';
 import AuthStack from './authStack';
 
-const token = true;
+import { connect } from 'react-redux';
 
-export default function AppContainer() {
+// const token = true;
+
+function AppContainer({ token }) {
   return (
     <NavigationContainer>
-      {token ? <AuthStack /> : <MainStack />}
+      {token ? <MainStack /> : <AuthStack />}
     </NavigationContainer>
   );
 }
+
+const mapState = (state) => {
+  return {
+    token: state.reducerUser.token,
+  };
+};
+
+export default connect(mapState, null)(AppContainer);
