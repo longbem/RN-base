@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, SafeAreaView } from 'react-native';
 
 export default function AccountScreen() {
-  const a = 0;
+  const a = 2;
 
   return (
     <SafeAreaView>
