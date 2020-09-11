@@ -1,5 +1,5 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 // import screen
 import LoanAmountScreen from '../../screens/loanAmount';
@@ -12,7 +12,7 @@ export default function LoanAmountStack() {
       <Stack.Screen
         name="loanAmount"
         component={LoanAmountScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );

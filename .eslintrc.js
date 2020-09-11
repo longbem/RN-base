@@ -4,7 +4,9 @@ module.exports = {
   rules: {
     'no-debugger': 'error',
     'no-duplicate-imports': 'error',
+    'no-dupe-keys': 'error',
     'no-unused-vars': 'error',
-    'no-console': 'warn',
+    'no-console': 'error',
+    'react/jsx-no-duplicate-props': 'error',
   },
 };

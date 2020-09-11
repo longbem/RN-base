@@ -1,5 +1,5 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 
 // import screen
 import AccountScreen from '../../screens/account';
@@ -12,7 +12,7 @@ export default function AccountStack() {
       <Stack.Screen
         name="account"
         component={AccountScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );

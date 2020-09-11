@@ -1,5 +1,5 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import NewsScreen from '../../screens/loanAmount';
 
 const Stack = createStackNavigator();
@@ -10,7 +10,7 @@ export default function NewsStack() {
       <Stack.Screen
         name="news"
         component={NewsScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );

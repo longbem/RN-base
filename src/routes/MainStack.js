@@ -1,5 +1,5 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import BottomTabsApp from './BottomTabsApp';
 
 const Stack = createStackNavigator();
@@ -10,7 +10,7 @@ export default function MainStack() {
       <Stack.Screen
         name="bottomTabsApp"
         component={BottomTabsApp}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
