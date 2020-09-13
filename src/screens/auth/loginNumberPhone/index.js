@@ -3,7 +3,7 @@ import { Image, SafeAreaView, StyleSheet, View } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 import { ic_auth } from './../image';
 import { useDispatch, connect } from 'react-redux';
-import { setToken } from './../../../store/users/actions';
+import { fetchLogin } from './../../../store/users/actions';
 
 function LoginWithNumberPhone() {
   const dispatch = useDispatch();
@@ -14,12 +14,7 @@ function LoginWithNumberPhone() {
   });
 
   const handleLogin = () => {
-    if (user.numberPhone === '123456' && user.password === '123456') {
-      alert('login');
-      dispatch(setToken(true));
-    } else {
-      alert('error');
-    }
+    dispatch(fetchLogin(user.numberPhone, user.password));
   };
 
   return (
@@ -61,7 +56,7 @@ function LoginWithNumberPhone() {
 }
 
 const mapDispatch = {
-  setToken,
+  fetchLogin,
 };
 
 export default connect(null, mapDispatch)(LoginWithNumberPhone);

@@ -4,3 +4,13 @@ export const setToken = (token) => {
     payload: token,
   };
 };
+
+export const fetchLogin = (username, password) => {
+  return {
+    type: 'LOGIN',
+    payload: {
+      username,
+      password,
+    },
+  };
+};
