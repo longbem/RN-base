@@ -1,24 +1,32 @@
+// import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { useMount } from '@umijs/hooks';
+import AuthStack from './AuthStack';
 import MainStack from './MainStack';
-import AuthStack from './authStack';
-
 import { connect } from 'react-redux';
 
-// const token = true;
+const Routes = ({ token }) => {
+  useMount(() => {
+    // RNBootSplash.hide({fade: true});
+  });
 
-function AppContainer({ token }) {
   return (
-    <NavigationContainer>
-      {token ? <MainStack /> : <AuthStack />}
-    </NavigationContainer>
+    <>
+      <NavigationContainer>
+        {!token ? <MainStack /> : <AuthStack />}
+      </NavigationContainer>
+      {/* <SnackBar /> */}
+    </>
   );
-}
+};
 
-const mapState = (state) => {
+const mapStateToProps = state => {
   return {
-    token: state.reducerUser.token,
+    token: state.auth.token,
   };
 };
 
-export default connect(mapState, null)(AppContainer);
+export default connect(mapStateToProps, null)(Routes);
+
+// export default Routes;
